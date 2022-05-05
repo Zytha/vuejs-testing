@@ -1,16 +1,12 @@
-<script>
-export default {
-    data() {
-        return {
-            isGood: false,
-            lang: 1,
-            likes: 0,
-            text: 'Bruh',
-            textJP: '不可思議のカルテ',
-            textTW: '我有冰淇淋！',
-        }
-    }
-}
+<script setup>
+import { ref } from 'vue';
+	
+let isGood = ref(false);
+let textJP = ref('こんにちは');
+let textEN = ref('Hello');
+let textTW = ref('你好');
+let lang = ref(1);
+
 </script>
 
 <template>
@@ -30,7 +26,7 @@ export default {
     </div>
 
     <div v-else-if="lang === 1">
-        <h1>📝 {{ text }}</h1>
+        <h1>📝 {{ textEN }}</h1>
         <div v-if="isGood">
             <h1>👍 Good</h1>
         </div>
@@ -40,7 +36,7 @@ export default {
         <button v-on:click="isGood = !isGood">✨Switch</button>
         <button v-on:click="likes++">👍 {{ likes }}</button>
         <button v-on:click="lang++">🌐 Language</button>
-        <input v-model="text" placeholder="Type Something"/>
+        <input v-model="textEN" placeholder="Type Something"/>
     </div>
 
     <div v-else-if="lang === 2">
