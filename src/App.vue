@@ -6,7 +6,7 @@ let textJP = ref('こんにちは');
 let textEN = ref('Hello');
 let textTW = ref('你好');
 let lang = ref(1);
-
+let likes = ref(1);
 </script>
 
 <template>
@@ -42,10 +42,10 @@ let lang = ref(1);
     <div v-else-if="lang === 2">
         <h1>📝 {{ textTW }}</h1>
         <div v-if="isGood">
-            <h1>👍 好屌</h1>
+            <h1>👍 水喲</h1>
         </div>
         <div v-else>
-            <h1>👎 辣雞</h1>
+            <h1>👎 樂色</h1>
         </div>
         <button v-on:click="isGood = !isGood">✨切換</button>
         <button v-on:click="likes++">👍 {{ likes }}</button>
